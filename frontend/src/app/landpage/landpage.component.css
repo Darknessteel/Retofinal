@@ -1,0 +1,71 @@
+    body {
+    background: #DBE6F6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6096BA, #DBE6F6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6096BA, #DBE6F6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #6096BA;
+    }
+
+    .dot{
+    border: 5px dashed #8B8C89;
+    }
+    .punteado{
+        border: 5px dotted #8B8C89;
+    }
+    .logo{
+        margin-top: -1%;
+        width: 4%;
+        height: 5%;
+    }
+
+    .eltop{
+        margin-top: 15%;
+        display:unset;
+        text-align: center;
+    }
+    nav{
+        background-color: transparent !important;
+        
+    }
+    .viajemos{
+       margin-top: 1%;
+        margin-left: -1%;
+    }
+    .imagenes{
+        width: 100%;
+        height: 100%;
+        border: 2px solid #8B8C89 ;
+        box-shadow: 8px 12px 18px rgb(53, 51, 51);
+    }
+  .tamano{
+      margin-top: 2%;
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+  .formu{
+      padding: 5px;
+      height: 10%;
+      height: 10%;
+  }
+  .tarjeta{
+    border: 2px solid #8B8C89 ;
+    box-shadow: 8px 12px 18px rgb(53, 51, 51);
+    background-color: transparent !important;
+    color: black;
+  }
+  .letra{
+      font-size: 120%;
+      color: black;
+      margin-left: 40%;
+  }
+  .boton{
+    box-shadow: 8px 12px 18px rgb(53, 51, 51);
+    width: 15%;
+  }
+  .lineal{
+    border: 5px solid #8B8C89 ;
+    font-size: 15px;
+}
+.pc{
+    border: 2px solid #8B8C89 ;
+    box-shadow: 8px 12px 18px rgb(53, 51, 51);
+}

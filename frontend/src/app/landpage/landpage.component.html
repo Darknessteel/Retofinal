@@ -1,0 +1,167 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container punteado">
+
+
+
+
+
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <img src="assets/img/edificio.png" alt="logo" class="logo">
+                    <a class="navbar-brand viajemos" href="#">VIAJEMOSJUNTOS</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#/login" style="margin-left: 700%;" >Ingresar <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#/registro" style="margin-left: 550%;" >Registrarse <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row" style="margin-left: 3%; margin-right: 3%;">
+            <h1 style="color: black; text-align: center;">BIENVENIDO!!</h1>
+            <div class="col-12">
+                <p class="text-justify" style="color: black;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Asperiores repellat, quam iste vitae porro ducimus qui molestiae molestias reiciendis nesciunt!
+                    Placeat in iste similique dolores veritatis ut, illum amet quam saepe dolorem et atque totam
+                    voluptatem temporibus ratione libero nemo, consequatur, nisi fugit quia commodi. lorem50 </p>
+            </div>
+    
+        </div>
+
+
+        
+
+        <div class="row tamano">
+            <div class="col-12 col-md-6">
+                <img src="assets/img/banner2.jpg" alt="" class="imagenes">
+            </div>
+
+            <div class="col-12 col-md-6">
+                <h1 style="color: black; text-align: center;">COMO ENCONTRAR UNA CASA</h1>
+                <p class="text-justify" style="color: black;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Praesentium nisi totam minus error officia? Doloremque ab sequi eum in eius optio consequatur,
+                    blanditiis laborum, vero veritatis nostrum voluptatibus quaerat quo deleniti neque dolores id
+                    itaque, iste ratione. Et minima consectetur at eum quod mollitia repudiandae laborum quam quae
+                    beatae enim sit molestiae doloribus repellat maiores unde facere magni, provident magnam! Mollitia,
+                    debitis id quisquam error voluptatem omnis vero quae commodi, eius expedita vel quod iste animi
+                    alias nisi tempore ut, autem ullam cum deserunt maiores sapiente. Maiores, praesentium sapiente
+                    animi beatae exercitationem ratione nesciunt dicta? Iusto officiis voluptates possimus facere.</p>
+            </div>
+            <div class="col-12 col-md-6">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row lineal tamano" style=" margin-top: 3%;">
+            <h1 class="tamano" style="color: black; text-align: center; margin-left: -2%;">BUSCA UNA CASA DE TU AGRADO</h1>
+            <div class="col-12">
+                <form action="" style="padding: 5px; width: 50%; margin-left: 25%;">
+                    <div class="form-row formu">
+                        <div class="col-md-6" style="height: 10%;">
+                            <label for="pais" class="form-label letra">Pais</label>
+                            <input type="text" class="form-control  pc" id="pais" name="pais" [(ngModel)]="pais">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ciudad" class="form-label letra ">Ciudad</label>
+                            <select class="form-control  pc" id="ciudad" name="ciudad" [(ngModel)]="ciudad">
+                                <option selected>Escoger...</option>
+                                <option>Bogota</option>
+                                <option>Medellin</option>
+                                <option>Cali</option>
+                                <option>Barranquilla</option>
+                                <option>Cartagena</option>
+                                <option>Bucaramanga</option>
+                                <option>Santa Marta</option>
+                                <option>Manizales</option>
+                                <option>Pereira</option>
+                                <option>Cucuta</option>
+                                <option>IBague</option>
+                                <option>Armenia</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" style="background-color: #8B8C89; color: #FAEAC0; margin-top: 3%;margin-left: 42%;"
+                            name="submit" class="btn btn-md boton pc" value="BUSCAR" (click)="BuscarCasa()">
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-12 col-md-4 " *ngFor="let casa of casas" style="margin-top: 3%;">
+                <center>
+                <div class="card tarjeta" style="width: 30rem;">
+                    <img src="{{casa.priimagen}}" class="card-img-top foto" alt="foto_casa">
+                    <div class="card-body">
+                        <center>
+                            <h4 class="card-title">{{casa.pais}}</h4>
+                            <h5>{{casa.ciudad}}</h5>
+                            <p>{{casa.direccion}}</p>
+                            <p class="card-text">Disponible</p>
+                            <small class="text-justify" style="font-size: 10px;">Para hacer una reserba tienes que registrarte luego iniciar sesion</small>
+
+                        </center>
+                    </div>
+                </div>
+            </center>
+            </div>
+
+        </div>
+
+        <div class="row tamano">
+            <div class="col-12 col-md-6">
+                <h1 style="color: black; text-align: center;">OFRECE TU CASA</h1>
+                <p class="text-justify" style="color: black;">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Praesentium nisi totam minus error officia? Doloremque ab sequi eum in eius optio consequatur,
+                    blanditiis laborum, vero veritatis nostrum voluptatibus quaerat quo deleniti neque dolores id
+                    itaque, iste ratione. Et minima consectetur at eum quod mollitia repudiandae laborum quam quae
+                    beatae enim sit molestiae doloribus repellat maiores unde facere magni, provident magnam! Mollitia,
+                    debitis id quisquam error voluptatem omnis vero quae commodi, eius expedita vel quod iste animi
+                    alias nisi tempore ut, autem ullam cum deserunt maiores sapiente. Maiores, praesentium sapiente
+                    animi beatae exercitationem ratione nesciunt dicta? Iusto officiis voluptates possimus facere.</p>
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="assets/img/banner3.jpg" alt="" class="imagenes">
+            </div>
+        </div>
+
+        <div class="row tamano">
+            <div class="col-12">
+                <h1 style="text-align: center; color: black;">TU BENEDICIO:</h1>
+                <p style="color: black;" class="text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Sapiente ipsum, atque nihil, perferendis sint fuga ullam alias nulla consectetur a est maxime
+                    reprehenderit quis blanditiis. Quisquam reiciendis fugit id quas.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+
+</footer>
