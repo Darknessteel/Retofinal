@@ -1,0 +1,446 @@
+*{
+  outline: none !important
+}
+
+.wrapper-calendar{
+  margin:1rem;
+  padding: .5rem;
+  border: solid 1px #eaeaea;
+  box-shadow: 0 0 10px #e4e4e4;
+}
+
+.divC {
+    text-align: center;
+    width: 300px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    padding: .25rem;
+    font-size: 1.5ch;
+    cursor: pointer;
+  }
+  li:hover{
+    font-weight: 600;
+  }
+  h2 {
+    margin-bottom: 4px;
+    padding: 0;
+  }
+  
+  .first-day {
+    grid-column-start: var(--first-day-start, 0);
+  }
+  
+  .day-name {
+    background: #eee;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 2px;
+    padding: 4px;
+    text-align: center;
+  }
+  
+  .header-calendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .header-calendar h1 {
+    width: 100%;
+    font-size: 13px;
+  }
+  
+  .header-calendar button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+  body {
+    background-image: url("assets/img/nightcity.gif");
+    background-color: #ffffff;
+    background-size: 100% 100%;
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foto{
+  height: 100%;
+  width: 100%;
+}
+.tarjeta{
+  border: 2px solid #8B8C89 ;
+  box-shadow: 8px 12px 18px rgb(53, 51, 51);
+}
+label{
+color: #557388;
+}
+
+.sombraInp{
+  box-shadow: 2px 4px 10px rgb(53, 51, 51);
+}
+
+
+
+
+.map{
+width: 100%;
+
+}
+.map ngui-map{
+  width: 100%;
+  height: 100%;
+}
+.llegada{
+  background-color: #A3CEF1; 
+  margin-right: 10%;
+  margin-left: 3%;
+}
+
+.formi{
+  margin-top: 2%;
+  background-color: #A3CEF1;
+}
+
+.cuerpo {
+  background: #E7ECEF
+
+  }
+
+
+.lineal{
+    border: 5px solid #8B8C89 ;
+    font-size: 15px;
+}
+
+.imagebus{
+    width: 300px;
+    height: 250px;
+    padding: 10px;
+    margin: 6px;
+}
+
+.centro{
+    text-align: center;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+.grande{
+    display: flex;
+    justify-content: center;
+}
+.selector{
+    width: 400px; 
+    height: 200px;
+
+    
+}
+
+.dot{
+    border: 5px dashed #8B8C89;
+}
+.punteado{
+    border: 5px dotted #8B8C89;
+}
+
+svg path,
+  svg rect{
+    fill: black;
+  }
+  
+  
+    .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  
+  
+  @media (prefers-reduced-motion) {
+      .animated {
+        -webkit-animation: unset !important;
+        animation: unset !important;
+        -webkit-transition: none !important;
+        transition: none !important;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+      
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+      
+        to {
+          opacity: 1;
+        }
+      }
+      .animate fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+      }
+      @-webkit-keyframes fadeInDown {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @-webkit-keyframes bounceIn {
+        from,
+        20%,
+        40%,
+        60%,
+        80%,
+        to {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      
+        0% {
+          opacity: 0;
+          -webkit-transform: scale3d(0.3, 0.3, 0.3);
+          transform: scale3d(0.3, 0.3, 0.3);
+        }
+      
+        20% {
+          -webkit-transform: scale3d(1.1, 1.1, 1.1);
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+      
+        40% {
+          -webkit-transform: scale3d(0.9, 0.9, 0.9);
+          transform: scale3d(0.9, 0.9, 0.9);
+        }
+      
+        60% {
+          opacity: 1;
+          -webkit-transform: scale3d(1.03, 1.03, 1.03);
+          transform: scale3d(1.03, 1.03, 1.03);
+        }
+      
+        80% {
+          -webkit-transform: scale3d(0.97, 0.97, 0.97);
+          transform: scale3d(0.97, 0.97, 0.97);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+      }
+      @keyframes bounceIn {
+        from,
+        20%,
+        40%,
+        60%,
+        80%,
+        to {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      
+        0% {
+          opacity: 0;
+          -webkit-transform: scale3d(0.3, 0.3, 0.3);
+          transform: scale3d(0.3, 0.3, 0.3);
+        }
+      
+        20% {
+          -webkit-transform: scale3d(1.1, 1.1, 1.1);
+          transform: scale3d(1.1, 1.1, 1.1);
+        }
+      
+        40% {
+          -webkit-transform: scale3d(0.9, 0.9, 0.9);
+          transform: scale3d(0.9, 0.9, 0.9);
+        }
+      
+        60% {
+          opacity: 1;
+          -webkit-transform: scale3d(1.03, 1.03, 1.03);
+          transform: scale3d(1.03, 1.03, 1.03);
+        }
+      
+        80% {
+          -webkit-transform: scale3d(0.97, 0.97, 0.97);
+          transform: scale3d(0.97, 0.97, 0.97);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+      }
+      .animate bounceIn {
+        -webkit-animation-duration: calc(1s * 0.75);
+        animation-duration: calc(1s * 0.75);
+        -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
+        animation-duration: calc(var(--animate-duration) * 0.75);
+        -webkit-animation-name: bounceIn;
+        animation-name: bounceIn;
+      }
+
+      @-webkit-keyframes zoomIn {
+        from {
+          opacity: 0;
+          -webkit-transform: scale3d(0.3, 0.3, 0.3);
+          transform: scale3d(0.3, 0.3, 0.3);
+        }
+      
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          -webkit-transform: scale3d(0.3, 0.3, 0.3);
+          transform: scale3d(0.3, 0.3, 0.3);
+        }
+      
+        50% {
+          opacity: 1;
+        }
+      }
+      .animate zoomIn {
+        -webkit-animation-name: zoomIn;
+        animation-name: zoomIn;
+      }
+
+      @-webkit-keyframes pulse {
+        from {
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+      
+        50% {
+          -webkit-transform: scale3d(1.05, 1.05, 1.05);
+          transform: scale3d(1.05, 1.05, 1.05);
+        }
+      
+        to {
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+      }
+      
+      @keyframes rubberBand {
+        from {
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+      
+        30% {
+          -webkit-transform: scale3d(1.25, 0.75, 1);
+          transform: scale3d(1.25, 0.75, 1);
+        }
+      
+        40% {
+          -webkit-transform: scale3d(0.75, 1.25, 1);
+          transform: scale3d(0.75, 1.25, 1);
+        }
+      
+        50% {
+          -webkit-transform: scale3d(1.15, 0.85, 1);
+          transform: scale3d(1.15, 0.85, 1);
+        }
+      
+        65% {
+          -webkit-transform: scale3d(0.95, 1.05, 1);
+          transform: scale3d(0.95, 1.05, 1);
+        }
+      
+        75% {
+          -webkit-transform: scale3d(1.05, 0.95, 1);
+          transform: scale3d(1.05, 0.95, 1);
+        }
+      
+        to {
+          -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+        }
+      }
+      .animate rubberBand {
+        -webkit-animation-name: rubberBand;
+        animation-name: rubberBand;
+      }

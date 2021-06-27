@@ -1,0 +1,152 @@
+<div class="main-content cuerpo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card animatet bounceIn" style="background-color: #A3CEF1;">
+                    <div class="header">
+                        <div *ngIf="x==1">
+                            <h4 class="title">Registrar Casa</h4>
+                        </div>
+
+                        <div *ngIf="x==0">
+                            <h4 class="tittle">Actualizar Casa</h4>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <form>
+                            <div class="row ">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="pais" class="form-label">Pais</label>
+                                        <input type="text" class="form-control" id="pais" name="pais"
+                                            [(ngModel)]="pais">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="user" class="form-label">Usuario</label>
+                                        <input type="text" class="form-control" id="user" name="user"
+                                            [(ngModel)]="user" disabled>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="telefono" class="form-label">Telefono</label>
+                                        <input type="text" class="form-control" id="telefono" name="telefono"
+                                            [(ngModel)]="telefono">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label for="ciudad" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" id="ciudad" name="ciudad"
+                                            [(ngModel)]="ciudad">
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group">
+                                        <label for="valor" class="form-label">Valor(Noche)</label>
+                                        <input type="text" class="form-control" id="valor" name="valor"
+                                            [(ngModel)]="valor">
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-4" *ngIf="false">
+                                    <div class="form-group">
+                                        <label for="id" class="form-label">id</label>
+                                        <input type="text" class="form-control" id="id" name="id"
+                                            [(ngModel)]="id">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-2" *ngIf="x==1">
+                                    <button type="submit" class="btn btn-fill pull-right"
+                                        style="background-color: #8B8C89; margin-top: 23%;" (click)="addHouse()">
+                                        Registrar
+                                    </button>
+
+                                </div>
+                                <div class="col-12 col-md-2" *ngIf="x==0">
+                                    <button type="submit" class="btn btn-fill pull-right"
+                                        style="background-color: #8B8C89; margin-top: 23%;" (click)="updateHouse()">
+                                        Actualizar
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4 ">
+                <div class="card card-user animatet bounceIn">
+
+
+                    <div class="content" style="background-color: #ffffff;">
+
+                        <div class="container" style="width: 100%; height: 50%;">
+                            <div class="col-md-10" style="margin-left: -10%;">
+                                <div class="form-group" style="margin-left: 2%;">
+                                    <label for="direccion" class="form-label">Direccion</label>
+                                    <input id="origin-input" type="text" class="form-control w-100" name="direccion" [(ngModel)]="direccion" style="width: 100%;">
+                                    <input id="place-id" type="hidden" placeholder="Enter an origin location" value={{originPlaceId}} />
+                                </div>
+                            </div>
+                            <div class="com-md-1">
+                                <button id="botoon" type="button" value="BUSACR" class="tp w-100" (click)="initMap()"style="margin-top: 10%;">BUSCAR</button>
+                            </div>
+                            <div class="main-content">
+                                <ngui-map [options]="mapOptions" style="margin-top:100px;height: 50%; width: 85%; position: absolute;top: 0px;left: 0px;background-color: rgb(229, 227, 223); margin-left: 8%;" (mapReady$)="onMapReady($event)" (mapClick)="onMapClick($event)" (idle)="onIdle($event)" id="map">
+                                    <marker *ngFor="let pos of positions" [position]="pos" (initialized$)="onMarkerInit($event)"></marker>
+                                </ngui-map>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger" role="alert" style="opacity: 60%;">
+                    <div layout="row" layout-align="center center" style="min-height: 500px">Ingrese la dirección completa</div>          
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div layout="row" layout-align="center center" style="min-height: 500px">
+            <div class="row" style=" background-color: #ffffff; width: 80%; margin-left: -7%;">
+                <form style="padding: 2%;">
+                    <div class="form-group">
+                        <label for="imagenun">imagen #1 {{imagenun}}</label>
+                        <input type="imagenun" name="imagenun" id="imagenun" class="form-control" style="width: 80%;" [(ngModel)]="imagenun">
+                    </div>
+                    <div class="form-group">
+                        <label for="imagendo">imagen #2 {{imagendo}}</label>
+                        <input type="text" name="imagendo" id="imagendo" class="form-control" style="width: 80%;" [(ngModel)]="imagendo">
+                    </div>
+                    <div class="form-group form-check">
+                        <label for="imagentre">imagen #3 {{imagentre}}</label>
+                        <input type="text" name="imagentre" id="imagentre" class="form-control"style="width: 80%;" [(ngModel)]="imagentre">
+                    </div>
+                </form>         
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<body>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="background-color: #ffffff;">
+                    <div class="header">
+                        <h4 class="title">{{titulo}}</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Pais</th>
+                                    <th scope="col">ciudad</th>
+                                    <th scope="col">Propietario</th>
+                                    <th scope="col">Llegada</th>
+                                    <th scope="col">Salida</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Accion</th>                                 
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let reserva of reservas">
+                                <td>{{reserva.id}}</td>
+                                <td>{{reserva.pais}}</td>
+                                <td>{{reserva.ciudad}}</td>
+                                <td>{{reserva.alfitrion}}</td>
+                                <td>{{reserva.dial}}/{{reserva.mesl}}/{{reserva.aniol}}</td>
+                                <td>{{reserva.dias}}/{{reserva.mess}}/{{reserva.anios}}</td>
+                                <td *ngIf="reserva.estado=='1'">Activo</td>
+                                <td *ngIf="reserva.estado=='0'">Inactivo</td>
+                                <td style="padding: 1%;">
+                                    <button type="button" class="btn btn-danger" *ngIf="b" data-toggle="modal"
+                                        data-target="#exampleModal" >
+                                        Cancelar
+                                    </button>
+                                    <button type="button" class="btn btn-info"  *ngIf="r" style="margin-left: 3%;" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                        Actualizar
+                                    </button>  
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true" data-dismiss="modal"
+                                        data-backdrop="false">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel" *ngIf="b">Calificación</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="NO">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                           <div class="col-md-6"  *ngIf="r">
+                                                                <h3 class="modal-title" id="exampleModalLabel" *ngIf="r">Cambia la fecha de la reserva:</h3>
+                                                                <hr>
+                                                                <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden" style="margin-left: 25%;">
+                                                                </ngb-datepicker>
+                                                                
+                                                                <ng-template #t let-date let-focused="focused" >
+                                                                  <span class="custom-day"
+                                                                        [class.focused]="focused"
+                                                                        [class.range]="isRange(date)"
+                                                                        [class.faded]="isHovered(date) || isInside(date)"
+                                                                        (mouseenter)="hoveredDate = date"
+                                                                        (mouseleave)="hoveredDate = null">
+                                                                    {{ date.day }}
+                                                                  </span>
+                                                                </ng-template>                                                                                                                                                                           
+                                                                <hr>
+                                                            </div>
+                                                            <div class="col-12 col-md-3" *ngIf="b">
+                                                                <ngb-rating [(rate)]="currentRate">
+                                                                    <ng-template let-fill="fill" let-index="index">
+                                                                        <span class="star" [class.filled]="fill === 100"
+                                                                            [class.bad]="index < 4">&#9733;</span>
+                                                                    </ng-template>
+                                                                </ngb-rating>
+                                                                <hr>
+                                                                <pre>Puntos: <b>{{currentRate}}</b></pre>
+                                                            </div>
+                                                            <div class="col-12 col-md-3" *ngIf="b">
+                                                                <div class="form-group">
+                                                                    <label
+                                                                        for="exampleFormControlTextarea1">Comentario:</label>
+                                                                    <textarea class="form-control"
+                                                                        id="exampleFormControlTextarea1" rows="3"
+                                                                        [(ngModel)]="comentario"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">NO</button>
+                                                    <button type="button" class="btn btn-danger"
+                                                        (click)="calificar(reserva.id,reserva.alfitrion)" *ngIf="b">Enivar</button>
+                                                        <button type="button" class="btn btn-danger"
+                                                        (click)="actualizarRese(reserva.id,reserva.alfitrion,reserva.ciudad,reserva.estado,reserva.huesped,reserva.pais)" *ngIf="r">Enivar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="r">
+            <div class="col-12">
+                <div class="card" style="background-color: #ffffff;">
+                    <div class="header">
+                        <h4 class="title">TUS CALIFICACIONES</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Huesped</th>
+                                    <th scope="col">Estrellas</th>
+                                    <th scope="col">Comentario-Huesped</th>
+                                    <th scope="col">Comentario</th>
+                                    <th scope="col">Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let calificacion of calificaciones">
+                                <td>{{calificacion.id}}</td>
+                                <td>{{calificacion.huesped}}</td>
+                                <td>{{calificacion.estrellas}}</td>
+                                <td>{{calificacion.cometario}}</td>
+                                <td>
+                                    <input id="comentario" placeholder="Ingresa tu comentario" value={{calificacion.cometariop}} #newHero/> 
+                                   </td>
+                                <td style="padding: 1%;" *ngIf="r">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop" (click)="calificap(calificacion.id,calificacion.estrellas,calificacion.cometario,calificacionusuario,calificacion.huesped, newHero.value)">
+                                    Calificar
+                                </button>
+                                </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

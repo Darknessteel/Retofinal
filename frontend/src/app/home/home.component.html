@@ -1,0 +1,79 @@
+<body>
+<div class="main-content cuerpo">
+  <body>
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-12 col-md-6  dot animatet bounceIn llegada" style="margin-right: 0%;">
+        <div class="centro">
+          <h4 class="text-center">Selecciona Fechas</h4>
+          <hr>
+          <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+          </ngb-datepicker>         
+          <ng-template #t let-date let-focused="focused">
+            <span class="custom-day"
+                  [class.focused]="focused"
+                  [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)"
+                  (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+              {{ date.day }}
+            </span>
+          </ng-template>      
+          <hr>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 ">
+        <div class="selector dot animatet bounceIn formi" style="margin-top: 15%;">
+          <form action="" style="padding: 5px">
+            <div class="form-row" style="padding: 5px">
+              <div class="col-md-6">
+                <label for="pais" class="form-label letra">Pais</label>
+                <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="pais">
+              </div>
+              <div class="col-md-6">
+                <label for="ciudad" class="form-label letra">Ciudad</label>
+                <select class="form-control" id="ciudad" name="ciudad" [(ngModel)]="ciudad">
+                  <option selected>Escoger...</option>
+                  <option>Bogota</option>
+                  <option>Medellin</option>
+                  <option>Cali</option>
+                  <option>Barranquilla</option>
+                  <option>Cartagena</option>
+                  <option>Bucaramanga</option>
+                  <option>Santa Marta</option>
+                  <option>Manizales</option>
+                  <option>Pereira</option>
+                  <option>Cucuta</option>
+                  <option>IBague</option>
+                  <option>Armenia</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" style="background-color: #000000; color: #FAEAC0; margin-top: 5%; margin-left: 38%;" name="submit"
+                class="btn btn-md boton sombraInp " value="BUSCAR" (click)="BuscarCasa()">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class="row punteado" style="margin-top: 2%;">
+    <div class="container">
+      <div class="col-12 col-md-4" *ngFor="let casa of casas" style="margin-top: 3%;">
+        <div class="card tarjeta" style="width: 30rem;" >      
+          <img src="{{casa.priimagen}}" class="card-img-top foto" alt="foto_casa">
+          <div class="card-body">
+            <center>
+            <h4 class="card-title">{{casa.pais}}</h4>
+            <h5>{{casa.ciudad}}</h5>
+            <p>{{casa.direccion}}</p>
+            <p class="card-text">Disponible</p>   
+            <a  class="btn btn-primary" style="margin-bottom: 3%;" (click)="Reserva(casa.direccion,casa.ciudad,casa.propietario,casa.telefono,casa.pais,casa.priimagen,casa.seguimagen,casa.terceimagen)">Reservar</a>   
+          </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
