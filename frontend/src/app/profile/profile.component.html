@@ -14,21 +14,21 @@
                   <div class="col-md-5">
                     <div class="form-group">
                       <label for="nombreCom" class="form-label">Nombre Completo</label>
-                      <input type="text" class="form-control sombraInp" id="nombreCom" name="nombreCom" [(ngModel)]="nombreCom">
+                      <input type="text" class="form-control" id="nombreCom" name="nombreCom" [(ngModel)]="nombreCom">
                     </div>
                   
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="user" class="form-label">Usuario</label>
-                      <input type="text" class="form-control sombraInp" id="user" name="user" [(ngModel)]="user" disabled >
+                      <input type="text" class="form-control" id="user" name="user" [(ngModel)]="user" disabled >
                     </div>
                    
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="direccion" class="form-label">Direccion</label>
-                      <input type="text" class="form-control sombraInp" id="direccion" name="direccion" [(ngModel)]="direccion">
+                      <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="direccion">
                     </div>
                    
                   </div>
@@ -40,14 +40,18 @@
                   <div class="col-12 col-md-6" >
                     <div class="form-group">
                       <label for="pais" class="form-label">Pais</label>
-                      <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="pais">
+                      <select class="form-control" id="pais" name="pais" [(ngModel)]="pais">
+                    <option selected>ARGENTINA</option>
+                    <option>BRASIL</option>                    
+                    <option>COLOMBIA</option>
+              </select>
                     </div>
                    
                   </div>
                   <div class="col-12 col-md-6">
                     <div class="form-group">
                       <label for="ciudad" class="form-label">Ciudad</label>
-                      <select class="form-control sombraInp" id="ciudad" name="ciudad" [(ngModel)]="ciudad">
+                      <select class="form-control" id="ciudad" name="ciudad" [(ngModel)]="ciudad">
                         <option selected>Apartado</option>
                     <option>Arauca</option>
                     <option>Armenia</option>
@@ -110,10 +114,6 @@
                       <input type="password" class="form-control sombraInp" id="contra" name="contra" [(ngModel)]="contra">
                     </div>
 
-                    
-  
-                                    
-    
                     </div>
                     <div class="col-12 col-md-3">
                     
@@ -124,9 +124,7 @@
                   </div>
 
                   <div class="col-12 col-md-3">
-                    <button type="submit" class="btn btn-fill pull-right sombraInp" style="background-color: #8B8C89; margin-top: 14%; margin-right: 15%;" (click)="acutalizarU()">
-                      Actualizar Perfil
-                    </button>
+                    <button type="submit" class="btn btn-fill pull-right sombraInp" style="background-color: #8B8C89; margin-top: 14%; margin-right: 15%;" (click)="acutalizarU()">Actualizar Perfil</button>
                   </div>
                 </div>
                       
@@ -141,12 +139,12 @@
           <div class="card card-user animatet bounceIn">
             <div class="image">
               <img
-                src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+                src="assets/img/medanim.gif"
                 alt="..."
               />
             </div>
-            <div class="content" style="background-color: #A3CEF1;">
-              <div class="author " style="background-color: #A3CEF1;">
+            <div class="content" style="background-color: #999999;">
+              <div class="author " style="background-color: #ffffff;">
                 
                   <img
                     class="avatar border-gray"
@@ -164,7 +162,7 @@
                   <div class="grande">
                     
                    
-                    <a href="#/registerHouse" style="color: #487fa3;">CASA</a>
+                    <a href="#/registerHouse" style="color: #7c0000;">CASA</a>
                     
                   </div>
                 
@@ -172,7 +170,7 @@
   
             </div>
             
-            <div class="text-center" style="background-color: #9ecceb; ">
+            <div class="text-center" style="background-color: #ffffff; ">
  
 
             </div>

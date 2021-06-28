@@ -3,10 +3,10 @@
   <body>
   <div class="container-fluid">
     <div class="row ">
-      <div class="col-12 col-md-6  dot animatet bounceIn llegada" style="margin-right: 0%;">
+      <div class="col-12 col-md-6  dot animatet bounceIn llegada" style="margin-right: 0%; background-color: #8f8f8f;">
         <div class="centro">
-          <h4 class="text-center">Selecciona Fechas</h4>
-          <hr>
+          <h4 class="text-center" style="background-color: #ffffff;">Selecciona Fechas</h4>
+          <hr> 
           <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
           </ngb-datepicker>         
           <ng-template #t let-date let-focused="focused">
@@ -22,30 +22,70 @@
           <hr>
         </div>
       </div>
-      <div class="col-12 col-md-5 ">
-        <div class="selector dot animatet bounceIn formi" style="margin-top: 15%;">
+      <div class="col-12 col-md-5">
+        <div class="selector dot animatet bounceIn formi" style="margin-top: 15%; background-color:  #8f8f8f;">
           <form action="" style="padding: 5px">
             <div class="form-row" style="padding: 5px">
               <div class="col-md-6">
-                <label for="pais" class="form-label letra">Pais</label>
-                <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="pais">
+                <label for="pais" class="form-label" style="color: white"><h2>Pais</h2></label>
+                <select class="form-control" style="background-color: #ffffff;" id="pais" name="pais" [(ngModel)]="pais">
+                    <option selected>ARGENTINA</option>
+                    <option>BRASIL</option>                    
+                    <option>COLOMBIA</option>
+                    <option>ECUADOR</option>
+              </select>
               </div>
               <div class="col-md-6">
-                <label for="ciudad" class="form-label letra">Ciudad</label>
-                <select class="form-control" id="ciudad" name="ciudad" [(ngModel)]="ciudad">
-                  <option selected>Escoger...</option>
-                  <option>Bogota</option>
-                  <option>Medellin</option>
-                  <option>Cali</option>
-                  <option>Barranquilla</option>
-                  <option>Cartagena</option>
-                  <option>Bucaramanga</option>
-                  <option>Santa Marta</option>
-                  <option>Manizales</option>
-                  <option>Pereira</option>
-                  <option>Cucuta</option>
-                  <option>IBague</option>
-                  <option>Armenia</option>
+                <label for="ciudad" class="form-label" style="color: white"><h2>Ciudad</h2></label>
+                <select class="form-control" style="background-color: #ffffff;" id="ciudad" name="ciudad" [(ngModel)]="ciudad">
+                  <option selected>Apartado</option>
+                    <option>Arauca</option>
+                    <option>Armenia</option>
+                    <option>Barranquilla</option>
+                    <option>Bello</option>
+                    <option>Bogota</option>
+                    <option>Bucaramanga</option>
+                    <option>Buenaventura</option>
+                    <option>Buga</option>
+                    <option>Cali</option>
+                    <option>Cartago</option>
+                    <option>Cartagena</option>
+                    <option>Caucasia</option>
+                    <option>Cucuta</option>
+                    <option>Duitama</option>
+                    <option>Envigado</option>
+                    <option>Facatativa</option>
+                    <option>Florencia</option>
+                    <option>Fusagasuga</option>
+                    <option>Girardot</option>
+                    <option>Ibague</option>
+                    <option>itagúi</option>
+                    <option>Jamundi</option>
+                    <option>Lorica</option>
+                    <option>Magangue</option>
+                    <option>Maicao</option>
+                    <option>Manizales</option>
+                    <option>Medellín</option>
+                    <option>Monteria</option>
+                    <option>Neiva</option>
+                    <option>Ocaña</option>
+                    <option>Paipa</option>
+                    <option>Palmira</option>
+                    <option>Pamplona</option>
+                    <option>Pasto</option>
+                    <option>Pereira</option>
+                    <option>Popayan</option>
+                    <option>Quibdo</option>
+                    <option>Rioacha</option>
+                    <option>Rionegro</option>
+                    <option>San andres</option>
+                    <option>Santa marta</option>
+                    <option>Tunja</option>
+                    <option>Valledupar</option>
+                    <option>Villavicencio</option>
+                    <option>Yopal</option>
+                    <option>Yumbo</option>
+                    <option>Zipaquira</option>
                 </select>
               </div>
             </div>
